@@ -1,4 +1,4 @@
-module github.com/robertgzr/caddy-render
+module github.com/robertgzr/caddygen
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect

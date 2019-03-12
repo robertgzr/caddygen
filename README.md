@@ -1,11 +1,11 @@
-# caddy-static
+# caddygen
 
 Generate static-page file listings from [caddy's](https://github.com/mholt/caddy) [browse plugin](https://caddyserver.com/docs/browse).
 
 ## Usage
 
 ```sh
-$ caddy-render -root /path/to/files -public /var/www
+$ caddygen -root /path/to/files -public /var/www
 
 ```
 
