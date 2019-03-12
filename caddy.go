@@ -18,11 +18,11 @@ func runCaddy() (*caddy.Instance, error) {
 	caddy.AppVersion = "0.1.0"
 	caddy.SetDefaultCaddyfileLoader("default", caddy.LoaderFunc(defaultLoader))
 
-	cdyfile, err := caddy.LoadCaddyfile("http")
+	caddyfile, err := caddy.LoadCaddyfile("http")
 	if err != nil {
 		return nil, errors.Wrap(err, "error loading caddyfile")
 	}
-	caddyserver, err := caddy.Start(cdyfile)
+	caddyserver, err := caddy.Start(caddyfile)
 	if err != nil {
 		return nil, errors.Wrap(err, "error starting caddyserver")
 	}
@@ -30,6 +30,10 @@ func runCaddy() (*caddy.Instance, error) {
 }
 
 func defaultLoader(serverType string) (caddy.Input, error) {
+	if serverType != "http" {
+		return nil, errors.New("no http server!")
+	}
+
 	contents := httpserver.Host + ":" + httpserver.Port
 	contents = contents + "\ntls off\nbrowse\n"
 	if Minify {
