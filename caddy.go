@@ -35,7 +35,8 @@ func defaultLoader(serverType string) (caddy.Input, error) {
 	}
 
 	contents := httpserver.Host + ":" + httpserver.Port
-	contents = contents + "\ntls off\nbrowse\n"
+	contents = contents + "\ntls off\n"
+	contents = contents + "browse / " + Template + "\n"
 	if Minify {
 		contents = contents + "minify\n"
 	}
