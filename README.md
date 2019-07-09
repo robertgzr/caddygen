@@ -1,6 +1,6 @@
 # caddygen
 
-Generate static-page file listings from [caddy's](https://github.com/mholt/caddy) [browse plugin](https://caddyserver.com/docs/browse).
+Generate static-page file listings from [caddy's](https://github.com/caddyserver/caddy) [browse plugin](https://caddyserver.com/docs/browse).
 
 ## Usage
 

@@ -3,14 +3,14 @@ package main
 import (
 	"github.com/pkg/errors"
 
-	"github.com/mholt/caddy"
-	"github.com/mholt/caddy/caddyhttp/httpserver"
+	"github.com/caddyserver/caddy"
+	"github.com/caddyserver/caddy/caddyhttp/httpserver"
 
 	// plug plugins
 	_ "github.com/hacdias/caddy-minify"
-	_ "github.com/mholt/caddy/caddyhttp/browse"
-	_ "github.com/mholt/caddy/caddyhttp/root"
-	_ "github.com/mholt/caddy/onevent"
+	_ "github.com/caddyserver/caddy/caddyhttp/browse"
+	_ "github.com/caddyserver/caddy/caddyhttp/root"
+	_ "github.com/caddyserver/caddy/onevent"
 )
 
 func runCaddy() (*caddy.Instance, error) {
