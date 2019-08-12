@@ -28,7 +28,7 @@ func NewCaddyClient() *CaddyClient {
 
 func makeAddr() string {
 	scheme := "http"
-	if httpserver.Port == httpserver.HTTPSPort {
+	if httpserver.Port == httpserver.DefaultHTTPSPort {
 		scheme = "https"
 	}
 	return fmt.Sprintf("%s://%s:%s", scheme, httpserver.Host, httpserver.Port)
