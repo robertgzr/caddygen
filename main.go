@@ -10,7 +10,7 @@ import (
 
 const (
 	DefaultPublic   = "./public"
-	DefaultTemplate = ""
+	DefaultTemplate = ":default:"
 )
 
 var (
@@ -25,8 +25,8 @@ func main() {
 	flag.StringVar(&Template, "template", DefaultTemplate, "Path to a template file to pass to http.browse")
 	flag.Parse()
 
-	if Template == "" {
-		tplPath, err := WriteTempTemplate()
+	if Template[:1] == ":" && Template[len(Template)-1:] == ":" {
+		tplPath, err := WriteTempTemplate(Template[1 : len(Template)-1])
 		if err != nil {
 			log.Fatal(err)
 		}

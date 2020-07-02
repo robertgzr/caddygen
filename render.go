@@ -31,7 +31,7 @@ func makeAddr() string {
 	if httpserver.Port == httpserver.DefaultHTTPSPort {
 		scheme = "https"
 	}
-	return fmt.Sprintf("%s://%s:%s", scheme, httpserver.Host, httpserver.Port)
+	return fmt.Sprintf("%s://%s:%s/", scheme, httpserver.Host, httpserver.Port)
 }
 
 func (c *CaddyClient) Get(uri string) (*http.Response, error) {
