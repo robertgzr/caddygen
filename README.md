@@ -6,7 +6,12 @@ Generate static-page file listings from [caddy's](https://github.com/caddyserver
 
 ```sh
 $ caddygen -root /path/to/files -public /var/www
+```
 
+Build and run as a container
+
+```
+$ make IMAGE=<image> container
 ```
 
 ## Features
