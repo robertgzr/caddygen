@@ -346,7 +346,7 @@ footer {
 			</div>
 		</main>
 		<footer>
-			Generated with <a rel="noopener noreferrer" href="https://caddyserver.com">Caddy</a> and <a rel="noopener noreferrer" href="https://github.com/robertgzr/caddygen">caddygen</a>
+			Generated with <a rel="noopener noreferrer" href="https://github.com/robertgzr/caddygen">caddygen</a>
 		</footer>
 		<script>
 			var filterEl = document.getElementById('filter');
@@ -704,8 +704,7 @@ footer {
 			</div>
 		</main>
 		<footer>
-			Generated with <a rel="noopener noreferrer" href="https://caddyserver.com">Caddy</a> and <a rel="noopener noreferrer" href="https://github.com/robertgzr/caddygen">caddygen</a>
-
+			Generated with <a rel="noopener noreferrer" href="https://github.com/robertgzr/caddygen">caddygen</a>
 		</footer>
 		<script>
 			var filterEl = document.getElementById('filter');
@@ -744,4 +743,3 @@ footer {
 		</script>
 	</body>
 </html>`
-`
