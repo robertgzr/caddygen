@@ -350,7 +350,6 @@ footer {
 		</footer>
 		<script>
 			var filterEl = document.getElementById('filter');
-			filterEl.focus();
 			function filter() {
 				var q = filterEl.value.trim().toLowerCase();
 				var elems = document.querySelectorAll('tr.file');
