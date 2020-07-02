@@ -20,9 +20,11 @@ var (
 )
 
 func main() {
-	flag.StringVar(&Public, "public", DefaultPublic, "Root path of the generated static-site")
-	flag.BoolVar(&Minify, "minify", Minify, "Wether to minify the generated content")
-	flag.StringVar(&Template, "template", DefaultTemplate, "Path to a template file to pass to http.browse")
+	fs := flag.NewFlagSet(os.Args[0], flag.ExitOnError)
+	fs.StringVar(&Public, "public", DefaultPublic, "Root path of the generated static-site")
+	fs.BoolVar(&Minify, "minify", Minify, "Wether to minify the generated content")
+	fs.StringVar(&Template, "template", DefaultTemplate, "Path to a template file to pass to http.browse")
+	flag.CommandLine = fs
 	flag.Parse()
 
 	if Template[:1] == ":" && Template[len(Template)-1:] == ":" {

@@ -8,8 +8,6 @@ import (
 
 	// plug plugins
 	_ "github.com/caddyserver/caddy/caddyhttp/browse"
-	_ "github.com/caddyserver/caddy/caddyhttp/root"
-	_ "github.com/caddyserver/caddy/onevent"
 	_ "github.com/hacdias/caddy-minify"
 )
 
