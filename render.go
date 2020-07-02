@@ -88,7 +88,7 @@ func render(path string, info os.FileInfo, err error) error {
 
 	// open file in public/
 	publicFile := filepath.Join(publicDir, uriFile)
-	fd, err := os.OpenFile(publicFile, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0755)
+	fd, err := os.OpenFile(publicFile, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0644)
 	if err != nil {
 		return err
 	}
