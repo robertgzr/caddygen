@@ -17,6 +17,7 @@ func runCaddy() (*caddy.Instance, error) {
 	caddy.AppName = "CaddyRenderStatic"
 	caddy.AppVersion = "0.1.0"
 	caddy.SetDefaultCaddyfileLoader("default", caddy.LoaderFunc(defaultLoader))
+	caddy.Quiet = true
 
 	caddyfile, err := caddy.LoadCaddyfile("http")
 	if err != nil {

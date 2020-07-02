@@ -94,10 +94,11 @@ func render(path string, info os.FileInfo, err error) error {
 	}
 
 	// write contents of response
-	if _, err := io.Copy(fd, resp.Body); err != nil {
+	n, err := io.Copy(fd, resp.Body)
+	if err != nil {
 		return err
 	}
 
-	log.Println(uri, "::", resp.StatusCode)
+	log.Printf("%v :: %v (%v)", uri, resp.StatusCode, n)
 	return nil
 }
