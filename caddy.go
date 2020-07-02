@@ -7,10 +7,10 @@ import (
 	"github.com/caddyserver/caddy/caddyhttp/httpserver"
 
 	// plug plugins
-	_ "github.com/hacdias/caddy-minify"
 	_ "github.com/caddyserver/caddy/caddyhttp/browse"
 	_ "github.com/caddyserver/caddy/caddyhttp/root"
 	_ "github.com/caddyserver/caddy/onevent"
+	_ "github.com/hacdias/caddy-minify"
 )
 
 func runCaddy() (*caddy.Instance, error) {

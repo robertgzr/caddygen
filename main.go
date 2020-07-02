@@ -6,7 +6,6 @@ import (
 	"os"
 
 	"github.com/oklog/run"
-	"github.com/pkg/errors"
 )
 
 const (
@@ -36,29 +35,19 @@ func main() {
 	}
 
 	var g run.Group
-	{
-		caddyserver, err := runCaddy()
-		if err != nil {
-			log.Fatal(err)
-		}
-		g.Add(func() (err error) {
-			caddyserver.Wait()
-			return nil
-		}, func(err error) {
-			if stopErr := caddyserver.Stop(); stopErr != nil {
-				log.Fatal(errors.Wrap(stopErr, "error stopping caddy"))
-			}
-		})
+	caddyserver, err := runCaddy()
+	if err != nil {
+		log.Fatalf("caddygen: %v", err)
 	}
-	{
-		g.Add(func() error {
-			return renderPublic()
-		}, func(err error) {
-			return
-		})
-	}
+	g.Add(func() error {
+		caddyserver.Wait()
+		return nil
+	}, func(error) { _ = caddyserver.Stop() })
+	g.Add(func() error {
+		return renderPublic()
+	}, func(error) { log.Println("done") })
 
 	if err := g.Run(); err != nil {
-		log.Fatal(err)
+		log.Fatalf("caddygen: %v", err)
 	}
 }
